@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+{%if no_faces%}
+<div class="container">
+  <div class="logo text-center mb-3"><img src="{% static 'images/logo1.png'%}" alt="Logo" ></div>
+  <hr />
+  <div class="alert alert-danger">
+    No faces detected. Cannot process the video.
+  </div>
+</div>
+{%else%}
+<div class="container">
+  <div class="logo text-center mb-3"><img src="{% static 'images/logo1.png'%}" alt="Logo" ></div>
+  <hr />
+<body>
+  <center>
+    <br>
+    <br>
+    <h1>{{result}}%의 확률로 진실입니다.<h1>
+    <br>
+    <br>
+    <p style="font-size:30px;">확률이 50%이하라면</p>
+    <p style="font-size:30px;">신뢰할 수 없는 이미지입니다</p>
+  </center>
+</body>
+</script>
+{%endif%}
+{%endblock%}
